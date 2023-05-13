@@ -1,39 +1,36 @@
-<div id="<%= dom_id course %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Title:</strong>
+<div id="<%= dom_id course %>" class="border bg-white p-2">
+
+  <div class="my-5 font-bold">
     <%= course.title %>
-  </p>
+  </div>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Content:</strong>
+
+  <div class="my-5">
     <%= course.content %>
-  </p>
+  </div>
 
+<div class="flex justify-between">
   <p class="my-5">
-    <strong class="block font-medium mb-1">Level name:</strong>
+    <strong class="block font-bold mb-1">Level name:</strong>
     <%= course.level_name %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Material name:</strong>
+    <strong class="block font-bold mb-1">Material name:</strong>
     <%= course.material_name %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Slug:</strong>
-    <%= course.slug %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Statut name:</strong>
+    <strong class="block font-bold mb-1">Statut name:</strong>
     <%= course.statut_name %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">User:</strong>
-    <%= course.user_id %>
-  </p>
+    <strong class="block font-medium mb-1">Auteur:</strong>
+Prof :<%= course.user.full_name %>
 
+  </p>
+</div>
   <% if action_name != "show" %>
     <%= link_to "Show this course", course, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to 'Edit this course', edit_course_path(course), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
