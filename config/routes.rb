@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+  ################## COURSES  ##########################
+  get "new-course", to:"courses#new"
+  resources :courses
+  
+  
+  ################## STATUTS  ##########################
+  resources :statuts
+  get "new-statut", to:"statuts#new"
+
+
+  ################## MATERIALS  ##########################
+  resources :materials
+  get "new-material", to:"materials#new"
+
+  ################## LEVELS  ##########################
+  resources :levels
+  get "new-level", to:"levels#new"
+  get "dashboard", to:'dashboard#index'
   
   ################## USERS  ##########################
   devise_scope :user do

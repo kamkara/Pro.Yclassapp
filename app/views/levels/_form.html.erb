@@ -1,0 +1,25 @@
+<% if level.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+        <h2><%= pluralize(level.errors.count, "error") %>
+            prohibited this level from being saved:</h2>
+
+        <ul>
+            <% level.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+<%= form_with(model: level, class: "contents") do |form| %>
+    <div class="flex max-w-full">
+        <div class="mx-auto">
+            <%= form.text_field :title, placeholder:"level name ..." %>
+        </div>
+
+
+        <div class="mx-auto">
+            <%= form.submit "Enregistrez", class: "rounded-lg py-3 px-2 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+        </div>
+    </div>
+<% end %>
+

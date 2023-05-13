@@ -1,0 +1,6 @@
+<%#= turbo_frame_tag "new_material" do %>
+<div class="mx-auto md:w-2/3 w-full">
+  <%= link_to 'Retour', materials_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  <%= render "form", material: @material %>
+</div>
+<%# end %>

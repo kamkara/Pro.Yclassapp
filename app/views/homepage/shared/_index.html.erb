@@ -1,0 +1,25 @@
+<% @title="Accueil" %>
+<!-- Navbar Items -->
+<%= render "homepage/shared/navbar" %>
+
+<div class="container md:mx-auto mt-20">
+
+    <div class="flex flex-wrap md:flex-row flex-col">
+        <!-- Materials -->
+        <div class="w-full md:w-1/4 p-2 border">
+            <%= render "homepage/shared/materials", cached:true %>
+        </div>
+        <!-- Contents -->
+        <div class="w-full md:w-2/4 p-2 ">
+            <%= render "homepage/shared/chatbox", cached:true %>
+            <%= render "homepage/shared/contents", cached:true %>            
+        </div>
+        <!-- User Profil-->
+        <div class="w-full md:w-1/4 p-2 hidden md:block border">
+            <%= render "homepage/shared/user_profil", cached:true %>            
+        </div>
+    </div>
+</div>
+
+
+
