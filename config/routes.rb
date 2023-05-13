@@ -1,21 +1,24 @@
 Rails.application.routes.draw do
   ################## COURSES  ##########################
   get "new-course", to:"courses#new"
-  resources :courses
+  resources :courses, except:[:new]
   
   
   ################## STATUTS  ##########################
-  resources :statuts
   get "new-statut", to:"statuts#new"
+  resources :statuts, except:[:new]
 
 
   ################## MATERIALS  ##########################
-  resources :materials
   get "new-material", to:"materials#new"
+  resources :materials, except:[:new]
 
   ################## LEVELS  ##########################
-  resources :levels
   get "new-level", to:"levels#new"
+  resources :levels, except:[:new]
+
+
+  ################## DASHBOARD  ##########################
   get "dashboard", to:'dashboard#index'
   
   ################## USERS  ##########################

@@ -77,3 +77,7 @@ end
 gem "friendly_id", "~> 5.5"
 
 gem "devise", "~> 4.9"
+
+gem "wicked", "~> 2.0"
+
+gem "wicked_pdf", "~> 2.6"
