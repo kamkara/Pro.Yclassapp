@@ -1,5 +1,5 @@
 # The name of this app. Must be unique within a project.
-name: app
+name: pro.yclassapp
 
 # The runtime the application uses. The 'type' key defines the base container
 # image that will be used to run the application. There is a separate base
@@ -7,7 +7,7 @@ name: app
 # in multiple versions. Check the Ruby documentation
 # (https://docs.platform.sh/languages/ruby.html#supported-versions)
 # to find the supported versions for the 'ruby' type.
-type: 'ruby:3.2'
+type: 'ruby:3.0'
 
 # The following block defines a single writable directory, 'web/uploads'
 # The 'source' specifies where the writable mount is. The 'local' source
@@ -20,7 +20,7 @@ mounts:
     source_path: uploads
 
 # The size of the persistent disk of the application (in MB).
-disk: 2048
+disk: 1024
 
 # The relationships of the application with services or other applications.
 #
