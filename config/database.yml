@@ -83,8 +83,19 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
+#production:
+#  <<: *default
+#  database: Pro_Yclassapp_production
+#  username: Pro_Yclassapp
+#  password: <%= ENV["PRO_YCLASSAPP_DATABASE_PASSWORD"] %>
+
 production:
-  <<: *default
-  database: Pro_Yclassapp_production
-  username: Pro_Yclassapp
-  password: <%= ENV["PRO_YCLASSAPP_DATABASE_PASSWORD"] %>
+  adapter: postgresql
+  encoding: unicode
+  database_url: <%= ENV['YCLASSAPP_DATABASE_NAME'] %>
+  database_name: <%= ENV['YCLASSAPP_DATABASE_NAME'] %>
+  database_username: <%= ENV['YCLASSAPP_DATABASE_USERNAME'] %>
+  database_password: <%= ENV['YCLASSAPP_DATABASE_PASSWORD'] %>
+  host: <%= ENV['YCLASSAPP_DATABASE_HOST'] %>
+  port: <%= ENV['YCLASSAPP_DATABASE_PORT'] %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
