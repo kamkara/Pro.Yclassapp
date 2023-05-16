@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  
+  ################## LEARN POD  ##########################
+  get "new-learn", to:"learns#new"
+  get "leanrs", to:"learns#index"
+  resources :learns
+
   ################## COURSES  ##########################
   get "new-course", to:"courses#new"
   resources :courses, except:[:new]

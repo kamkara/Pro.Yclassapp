@@ -1,0 +1,46 @@
+<%= form_with(model: learn, class: "contents") do |form| %>
+  <% if learn.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(learn.errors.count, "error") %> prohibited this learn from being saved:</h2>
+
+      <ul>
+        <% learn.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="my-5">
+    <%= form.label :titre %>
+    <%= form.text_field :title, placeholder:"titre",  class: "block rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+</div>
+
+<div class="my-5 bg-white">
+    <%= form.label :"contenu", class:"pl-2" %>
+
+    <%= form.rich_text_area :content, placeholder:"Contenu", class: "block  rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+</div>
+
+<!-- Items of course-->
+<div class="flex my-4">
+    <div class="w-1/2">
+        <%= form.label :"Niveau" %>
+        <br>
+            <%= form.select :level_name, @levels.map{|level| [level.title]}, class: "block rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+        </div>
+
+        <div class="w-1/2">
+            <%= form.label :Matiere %>
+            <br>
+                <%= form.select :material_name, @materials.map{|material| [material.title]}, class: "block rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+            </div>
+
+
+        </div>
+
+        <div class="inline py-2">
+            <%= form.submit "Enregistrer", class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+        </div>
+
+<% end %>
