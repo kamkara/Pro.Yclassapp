@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2023_05_13_010836) do
   # These are extensions that must be enabled in order to support this database
+  enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
   create_table "action_text_rich_texts", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -113,16 +114,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_13_010836) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "full_name"
-    t.string "city_name"
-    t.string "school_name"
-    t.string "class_name"
-    t.string "contact"
-    t.string "matricule"
-    t.string "profil_avatar"
-    t.string "user_role"
+    t.string "full_name", null: false
+    t.string "first_name", null: false
+    t.string "last_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
