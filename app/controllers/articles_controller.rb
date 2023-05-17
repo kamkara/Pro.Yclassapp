@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_article, only: %i[ show edit update destroy ]
+  before_action :set_material
 
   # GET /articles or /articles.json
   def index
@@ -21,7 +23,7 @@ class ArticlesController < ApplicationController
 
   # POST /articles or /articles.json
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.build(article_params)
 
     respond_to do |format|
       if @article.save
@@ -60,11 +62,14 @@ class ArticlesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
-      @article = Article.find(params[:id])
+      @article = Article.friendly.find(params[:id])
     end
 
+    def set_material
+      @materials = Material.all
+    end
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :main_image, :content, :material_name, :slug, :user_id)
+      params.require(:article).permit(:title, :main_image_article, :content, :material_name, :slug, :user_id)
     end
 end

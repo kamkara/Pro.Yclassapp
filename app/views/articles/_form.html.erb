@@ -12,36 +12,31 @@
   <% end %>
 
   <div class="my-5">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.text_field :title, 
+    placeholder:"Donner le titre de l'article ...", 
+    class: "article-style" %>
+  </div>
+  <div class="my-5">
+<%= form.file_field :main_image_article,
+    accept: 'image/png, image/gif, image/jpeg',
+    placeholder:"Donner le titre de l'article ...", 
+    class: "" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :main_image %>
-    <%= form.text_field :main_image, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.rich_text_area :content,
+     placeholder:"Ecrivez le contenu de l'article ...", 
+class: "article-style bg-white" %>
+
   </div>
 
-  <div class="my-5">
-    <%= form.label :content %>
-    <%= form.rich_text_area :content, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="w-full my-2">
+    <%= form.label :Matiere %><br>
+    <%= form.select :material_name, @materials.map{|material| [material.title]}, class: "block rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :material_name %>
-    <%= form.text_field :material_name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
 
-  <div class="my-5">
-    <%= form.label :slug %>
-    <%= form.text_field :slug, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  <div class="inline my-2">
+    <%= form.submit "Publiez l'Article", class: "rounded-lg py-2 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
   </div>
 <% end %>

@@ -55,7 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_17_165348) do
 
   create_table "articles", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "title"
-    t.string "main_image"
+    t.string "main_image_article"
     t.string "material_name"
     t.string "slug"
     t.uuid "user_id", null: false

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :articles
   
   ################## LEARN POD  ##########################
-  get "new-learn", to:"learns#new"
-  get "leanrs", to:"learns#index"
+  get "new-article", to:"articles#new"
+  get "articles", to:"articles#index"
+  resources :articles, except: %i[:new, :index]
 
   ################## COURSES  ##########################
   get "new-course", to:"courses#new"
@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   ################## STATUTS  ##########################
   get "new-statut", to:"statuts#new"
   resources :statuts, except:[:new]
-
-
+  
+  
   ################## MATERIALS  ##########################
   get "new-material", to:"materials#new"
   resources :materials, except:[:new]
@@ -22,8 +22,8 @@ Rails.application.routes.draw do
   ################## LEVELS  ##########################
   get "new-level", to:"levels#new"
   resources :levels, except:[:new]
-
-
+  
+  
   ################## DASHBOARD  ##########################
   get "dashboard", to:'dashboard#index'
   

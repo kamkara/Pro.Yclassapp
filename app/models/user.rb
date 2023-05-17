@@ -9,7 +9,6 @@ class User < ApplicationRecord
   has_many :levels
   has_many :materials
   has_many :statuts
-  has_many :learns
   has_many :exercises
   has_many :questions
   has_many :results
