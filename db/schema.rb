@@ -87,28 +87,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_17_165348) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
-  create_table "learnpods", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "title"
-    t.string "slug"
-    t.string "level_name"
-    t.string "material_name"
-    t.uuid "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_learnpods_on_user_id"
-  end
-
-  create_table "learns", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "title"
-    t.string "level_name"
-    t.string "material_name"
-    t.string "slug"
-    t.uuid "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_learns_on_user_id"
-  end
-
   create_table "levels", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "title"
     t.string "slug"
@@ -160,8 +138,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_17_165348) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "articles", "users"
   add_foreign_key "courses", "users"
-  add_foreign_key "learnpods", "users"
-  add_foreign_key "learns", "users"
   add_foreign_key "levels", "users"
   add_foreign_key "materials", "users"
   add_foreign_key "statuts", "users"
