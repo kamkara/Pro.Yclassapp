@@ -260,7 +260,7 @@ DEPENDENCIES
   pg (~> 1.1)
   platform_sh_rails
   puma (~> 5.0)
-  rails (~> 7.0.4, >= 7.0.4.3)
+  rails (~> 7.0.2, >= 7.0.4.3)
   redis (~> 4.0)
   selenium-webdriver
   sprockets-rails
