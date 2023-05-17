@@ -74,17 +74,14 @@ group :test do
   gem "webdrivers"
 end
 
+############ PROJECT GEMS  #################
 gem "friendly_id", "~> 5.5"
-
 gem "devise", "~> 4.9"
-
 gem "wicked", "~> 2.0"
-
 gem "wicked_pdf", "~> 2.6"
 #gem 'active_analytics'
 #gem 'crawler_detect'
 
-#############################
 ############### DEPLOYED APP    ############
 gem 'platform_sh_rails'
 gem 'unicorn', '~> 6.1', :group => :production
