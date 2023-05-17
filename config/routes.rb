@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  resources :articles
   
   ################## LEARN POD  ##########################
   get "new-learn", to:"learns#new"
   get "leanrs", to:"learns#index"
-  resources :learns
 
   ################## COURSES  ##########################
   get "new-course", to:"courses#new"
