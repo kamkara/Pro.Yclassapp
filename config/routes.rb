@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   
+  
+  # Defines the root path route ("/") and Feed course
+  root "homepage#index"
+  get "feed", to:'feed#index'
+  
   ################## LEARN POD  ##########################
   get "new-article", to:"articles#new"
   get "articles", to:"articles#index"
@@ -34,9 +39,9 @@ Rails.application.routes.draw do
     get 'student-sign-up', to: 'devise/registrations#new', as: "new_user_registration"
     delete 'deconnecter',  to: "devise/sessions#destroy", as: "destroy_user_session_path"
   end
+
+
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  root "homepage#index"
 end

@@ -5,10 +5,10 @@
     <div class="items-center text-center -mt-6">
         <%= link_to root_path do %>
             <div class="avatar">
-                <% member_avatar = "#{[current_user.first_name.first, current_user.last_name.first].join('')}"  %>
+                <%# member_avatar = "#{[current_user.first_name.first, current_user.last_name.first].join('')}"  %>
                 <div class="w-14 rounded-full">
                     <p class="flex h-14 w-14 rounded-full bg-gray-300 font-bold text-black mx-auto uppercase">
-                        <span class="flex justify-center mx-auto p-4 "><%= member_avatar %></span>
+                        <span class="flex justify-center mx-auto p-4 "><%#= member_avatar %></span>
                     </p>
                 </div>
             </div>

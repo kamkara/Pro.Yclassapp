@@ -1,7 +1,47 @@
 <% @title="Accueil" %>
-<% if user_signed_in? %>
-    <%= render "homepage/shared/index" %>
-<% else %>
-    <%= render "homepage/pages/index" %>
-<% end %>
+
+<!-- ====== Navbar Section Start -->
+<%= render "homepage/shared/navbar" %>
+<!-- ====== Navbar Section End -->
+
+<!-- ====== Hero Section Start -->
+<%= render "homepage/shared/hero" %>
+<!-- ====== Hero Section End -->
+<!-- ====== About Section Start -->
+<%= render "homepage/shared/about" %>
+<!-- ====== About Section End -->
+
+<!-- ====== Features Section Start -->
+<% render "homepage/shared/feature" %>
+<!-- ====== Features Section End -->
+
+
+<!-- ====== Pricing Section Start -->
+<%= render "homepage/shared/pricing" %>
+<!-- ====== Pricing Section End -->
+
+<!-- ====== Faq Section Start -->
+<%= render "homepage/shared/faq" %>
+<!-- ====== Faq Section End -->
+
+<!-- ====== Testimonials Start ====== -->
+<% render "homepage/shared/testimonial" %>
+<!-- ====== Testimonials End ====== -->
+
+<!-- ====== Teams Start ====== -->
+<% render "homepage/shared/team" %>
+<!-- ====== Teams End ====== -->
+
+<!-- ====== Contact Start ====== -->
+<%= render "homepage/shared/contact" %>
+<!-- ====== Contact End ====== -->
+
+<!-- ====== Footer Start ====== -->
+<%= render "homepage/shared/footer" %>
+<!-- ====== Footer End ====== -->
+
+<!-- ====== Back To Top Start -->
+    <a href="javascript:void(0)" class=" hidden items-center justify-center bg-primary text-white w-10 h-10 rounded-md fixed bottom-8 right-8 left-auto z-[999] hover:bg-dark back-to-top shadow-md transition duration-300 ease-in-out"> <span class="w-3 h-3 border-t border-l border-white rotate-45 mt-[6px]"></span>
+</a>
+<!-- ====== Back To Top End -->
 
