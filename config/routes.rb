@@ -33,15 +33,13 @@ Rails.application.routes.draw do
   get "dashboard", to:'dashboard#index'
   
   ################## USERS  ##########################
-  devise_scope :user do
-    get 'profil', to: 'devise/registrations#edit'
-    get 'student-sign-in', to: 'devise/sessions#new'
-    get 'student-sign-up', to: 'devise/registrations#new', as: "new_user_registration"
-    delete 'deconnecter',  to: "devise/sessions#destroy", as: "destroy_user_session_path"
+  
+  devise_for :users, controllers: { registrations: 'users/registrations' }
+
+  namespace :users do
+    resources :registration_steps, only: [:show, :update], controller: 'registration_steps'
   end
 
-
-  devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
 end
