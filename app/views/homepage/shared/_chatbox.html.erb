@@ -1,5 +1,8 @@
+
+<!-- get User feedback-->
 <div class="card bg-white m-2">
-    <%= link_to 'dashboard', class:"py-4 pl-4  text-italic text-xl font-semibold"  do %>
-        <span class="">Avez-vous une question <%= current_user.last_name %> ? ...  </span>
+<!-- setup pop up to send User requete-->
+    <%= link_to '#', class:"py-4 pl-4  text-italic text-xl font-semibold hover:text-blue-500 hover:underline"  do %>
+        <span class=""> Avez-vous une question <%= current_user.last_name %> ? ... </span>
     <% end %>
 </div>
