@@ -1,3 +1,5 @@
-<div class="card bg-white mb-1">
-    <p class="p-2">Epace Chatbox</p>
+<div class="card bg-white m-2">
+    <%= link_to 'dashboard', class:"py-4 pl-4  text-italic text-xl font-semibold"  do %>
+        <span class="">Avez-vous une question <%= current_user.last_name %> ? ...  </span>
+    <% end %>
 </div>
