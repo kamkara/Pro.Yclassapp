@@ -59,4 +59,18 @@ module ApplicationHelper
     def render_turbo_stream_flash_messages
     turbo_stream.prepend "flash", partial: "shared/flash/user_flash"
     end
+
+    def current_user_status
+        if current_user.user_role == "Student"
+        return "student"
+        elsif current_user.user_role == "Teacher"
+        return "teacher"
+        elsif current_user.user_role == "Ambassador"
+        return "ambassador"
+        elsif current_user.user_role == "Team"
+        return "team"
+        else
+        return ""
+        end
+    end
 end

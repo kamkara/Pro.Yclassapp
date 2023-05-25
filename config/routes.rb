@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   ################## MATERIALS  ##########################
   get "new-material", to:"materials#new"
   resources :materials, except:[:new]
-
+  
   ################## LEVELS  ##########################
   get "new-level", to:"levels#new"
   resources :levels, except:[:new]
@@ -26,6 +26,17 @@ Rails.application.routes.draw do
   
   ################## DASHBOARD  ##########################
   get "dashboard", to:'dashboard#index'
+  get "students", to:"dashboard#student"
+  get "enseignants", to:"dashboard#teacher"
+  get "ambassadors", to:"dashboard#ambassador"
+  get "dashboard", to:'dashboard#index'
+  get "setting", to:'dashboard#home'
+  
+  ################## DASHBOARD  && EsPORT ##########################
+  get "export_student", to:"dashboard#export"
+  get "course_export", to:"dashboard#course"
+  
+  
   
   ################## USERS  ##########################
   devise_scope :user do

@@ -1,0 +1,5 @@
+<% headers = ['Nom Complet', 'Contact', "Etablissement", "Ville", "Série", "Date Inscription"] %>
+<%= CSV.generate_line headers %>
+<% @student_list.each do |student| %>
+    <%= CSV.generate_line([student.full_name, student.contact, student.school_name, student.city_name, student.level_name, student.created_at]) -%>
+<% end %>

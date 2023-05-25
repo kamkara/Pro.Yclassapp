@@ -3,6 +3,69 @@
 @tailwind utilities;
 
 @layer components {
+  .ln_Navbar_Items {
+      @apply block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 lg: border-0 lg:p-0;
+    }
+  
+    .navbar-items {
+      @apply block mt-4 lg: inline-block lg:mt-0 text-blue-500 font-bold mr-4;
+    }
+  
+    .navbar-button {
+      @apply inline-block text-sm px-4 py-3 leading-none border rounded text-blue-500 font-semibold border-blue-500 mt-4 lg: mt-0;
+    }
+  
+    .ln_Main_Button {
+      @apply text-white bg-blue-600 font-medium text-sm px-4 lg: px-5 py-3 sm:mr-2 lg:mr-0;
+    }
+  
+    .ln-feature-course {
+      @apply text-slate-800 text-sm bg-white border-slate-200 rounded-l-lg font-medium px-4 py-2 inline-flex space-x-1 items-center;
+    }
+  
+    /* Button*/
+    .ln-btn-color {
+      @apply bg-blue-500 py-1 px-2 rounded-full;
+    }
+  
+    /*Logo decor */
+    .ln-logo-decor {
+      @apply decoration-sky-400;
+    }
+  
+    /* Form sign in */
+    .ln-signIn-form {
+      @apply pl-11 text-gray-800 pr-11 py-2 rounded-md block w-full;
+    }
+  
+    .ln-select {
+      @apply block w-full rounded-none;
+    }
+  
+    .ln-field {
+      @apply mt-1 block w-full;
+    }
+  
+    .ln-sidebar-item {
+      @apply flex items-center text-white px-4 py-2 mt-2 text-xl font-bold;
+    }
+  
+    .ln-sidebar-link {
+      @apply px-3 py-2 mt-2 text-lg font-medium rounded-sm;
+    }
+  
+  
+    .ln-button {
+      @apply bg-blue-600 font-bold p-3 px-6 mt-2;
+    }
+  
+    .msg-notice {
+      @apply bg-green-300 text-green-900;
+    }
+  
+    .msg-alert {
+      @apply bg-red-300 text-red-900;
+    }
   .btn-primary {
     @apply py-2 px-4 bg-blue-200;
   }
