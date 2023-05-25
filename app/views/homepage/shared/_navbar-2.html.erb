@@ -33,7 +33,7 @@
                 </div>
             </ul>
         </div>
-        <%= link_to root_path, class:"btn btn-ghost font-bold normal-case text-xl md:ml-10" do %>
+        <%= link_to root_path, class:" font-bold normal-case text-xl md:ml-10" do %>
             <p class="block px-2 py-1 mt-2 bg-white rounded-lg  md:mt-0">
                 <span class="text-white bg-blue-600 px-1">Ln</span>class
             </p>
@@ -46,15 +46,21 @@
                 <%= link_to 'Accueil', root_path %>
             </li>
             <li>
-                <%= link_to 'Bac Blancs', root_path %>
+                <%= link_to 'Dashboard', "dashboard" %>
             </li>
             <li>
-                <%= link_to 'Probables au Bac', root_path %>
+                <%= link_to 'Nouv Cours', "new-course" %>
+            </li>
+            <li>
+                <%= link_to 'New Level', "new-level" %>
 
             </li>
 
             <li>
-                <%= link_to 'Invitations', "invitation" %>
+                <%= link_to 'New Material', "new-material" %>
+            </li>
+            <li>
+                <%= link_to 'New Statut', "new-statut" %>
             </li>
 
             <div class="avatar">
@@ -72,37 +78,6 @@
             </li>
 
         </ul>
-    </div>
-    <div class="navbar-end">
-        <% if current_user_status == "student" %>
-            <% if current_user.abonnement == "plan gratuit" %>
-                <%#= link_to  "Espace Recompense", students_path, class:"block px-4 py-2 mt-2 text-sm font-semibold bg-white rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" %>
-                <label class="block px-2 py-1 mt-2 bg-white font-bold text-md rounded-lg  md:mt-0" for="abonnement_modal">
-                    S'Abonnez
-                </label>
-            <% else %>
-                <%= link_to "invitation", class:"block px-2 py-1 mt-2 bg-white font-bold text-md rounded-lg  md:mt-0" do %>
-                    Gagnez Argent
-                <% end %>
-            <% end %>
-
-            <% elsif current_user_status == "ambassador" || current_user_status == "teacher"  %>
-            <%= link_to  "Espace Partenaire", ambassadors_path, class:"block px-4 py-2 mt-2 text-sm font-semibold bg-white rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" %>
-            <% elsif  current_user_status == "teacher"  %>
-            <%= link_to  "Espace Enseignant", enseignants_path, class:"block px-4 py-2 mt-2 text-sm font-semibold bg-white rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" %>
-            <% elsif current_user_status == "team"  %>
-            <%= link_to  "Espace Admin", dashboard_path, class:"block px-4 py-2 mt-2 text-sm font-semibold bg-white rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" %>
-        <% end %>
-    </div>
-</div>
-
-
-<!-- Put this part before </body> tag -->
-<input type="checkbox" id="abonnement_modal" class="modal-toggle"/>
-<div class="modal">
-    <div class="modal-box">
-        <label for="abonnement_modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-        <%#= render "homepage/abonnement/message" %>
     </div>
 </div>
 
