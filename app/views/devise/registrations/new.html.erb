@@ -1,36 +1,131 @@
-<div class="container mx-auto mt-20">
-<h2>Sign up</h2>
+<% @title="Inscription élèves" %>
+<%= turbo_frame_tag "student_sign_up_form" do %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-<div class="field">
-    <%= f.label :full_name %><br/>
-    <%= f.text_field :full_name, autofocus: true, autocomplete: "full_name" %>
+<div class="container-fluid">
+  <div class="flex flex-wrap ">
+    <div class="m-auto border border-x-slate-300 bg-white ">
+      <!-- Student Sign Up Header-->
+      <%= render "devise/shared/sign_header" %>
+      <div class="px-4 md:px-302 py-8">
+        <h2 class="flex justify-center text-2xl font-bold">Créez votre élève</h2>
+        <p class=""><small class="">Remplissez ces champs pour créer votre compte élève sur Lnclass Education</small></p>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <div class="py-2">
+            <div class="max-w-md">
+              <div class="grid grid-cols-1 ">
+              <!--
+                <span class="">Avez-vous un code d'invitation:</span>
+                <%#= f.text_field :referral_code, placeholder:"entrez votre code d'invitation ...",
+                class:"ln-field" %>
+                <small class="">Laissez lechamps vide, si vous n'avez pas de code d'invitation</small>
+              -->
+              </div>
+              </div>
+              <div class="py-2 max-w-md">
+                <div class="grid grid-cols-1 ">
+                  <span class="">Nom:</span>
+                  <%= f.text_field :first_name,  placeholder:"Konan ...",class:"ln-field" %>
+                </div>
+              </div>
+              <div class=" max-w-md">
+                <div class="grid grid-cols-1">
+                  <span class="">Prénom:</span>
+                  <%= f.text_field :last_name,  placeholder:"Ex: Angela ...", class:"ln-field" %>
+                </div>
+              </div>
+
+              <div class="py-2 max-w-md">
+                <div class="grid grid-cols-1 gap-2">
+                  <span class="">Ville: </span>
+                  <%= f.text_field :city_name, placeholder:"Ex: Abidjan", class:"ln-field" %>
+                </div>
+              </div>
+              <div class="py-2 max-w-md">
+                <div class="grid grid-cols-1">
+                  <span class="">Nom établissement:</span>
+                  <%= f.text_field :school_name, placeholder:"Ex: College Saint Michel Tiassalé", class:"ln-field" %>
+                </div>
+              </div>
+              <div class="max-w-md">
+                <div class="grid grid-cols-1">
+                  <span class="">N° matricule:</span>
+                  <%= f.text_field :matricule, placeholder:"Ex: 13235330y", class:"ln-field" %>
+                </div>
+              </div>
+              <div class="py-2 max-w-md">
+                <div class="grid grid-cols-1 gap-2">
+                  <span class="">Série:</span>
+                  <%= f.select(:level_name, @levels.map{|level| [level.title]}, { prompt: "choisir" }, class:"ln-select border border-black") %>
+                </div>
+              </div>
+              <div class="max-w-md">
+                <div class="grid grid-cols-1">
+                  <span class="">N° whatsapp:</span>
+                  <%= f.phone_field :contact, placeholder:"Ex: 0584258085", class:"ln-field" %>
+                </div>
+              </div>
+              <div class="py-2 max-w-md">
+                <div class="grid grid-cols-1">
+                  <label class="block">
+                    <%= f.label :"Je suis :" , class:"" %> <br>
+                      <%= f.radio_button :gender, "Femme", id:"fenale", checked: true %>
+                      <label for="fenale" class="ln-radio pr-8">Une Femme</label>
+                      <%= f.radio_button :gender, "Homme",id:"male" %>
+                      <label for="male" class="ln-radio">Un Homme</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="py-2 max-w-md">
+                <div class="grid grid-cols-1 gap-6">
+                  <div class="block">
+                    <p class=""> Vérifiez que vous avez bien remplir les champs avec les bonnes informations avant de cliquer sur
+                      <span class="font-semibold">Créer mon compte</span>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <%= f.hidden_field :user_role, value:"Student" %>
+
+              <div class="">
+                <%= render "devise/shared/error_messages", resource: resource %>
+              </div>
+              <!-- Error-->
+              <%#= form_error_notification(resource: resource) %>
+              <div class="my-4">
+                  <%= f.submit "Créer mon compte élève", class:"ln-button text-white " %>
+              </div>
+            </div>
+        <% end %>
+        <p class="">
+          <label for="sign_up_modal" class="text-blue-500">Des difficultés pour vous connectez ?</label>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions my-4">
-    <%= f.submit "Sign up" , class:"sign" %>
-  </div>
+ 
+<!-- End -->
 <% end %>
 
-<%= render "devise/shared/links" %>
 
+<!-- Put this part before </body> tag -->
+<input type="checkbox" id="sign_up_modal" class="modal-toggle"/>
+<div class="modal">
+  <div class="modal-box relative">
+    <h3 class="text-lg font-bold">Si vous avez des difficultés pour créer votre comptre</h3>  
+    <p class="py-4">
+      👉  Vérifiez que vous avez remplir tous les champs et que le
+      <span class="font-semibold">N° matricule et le N° tel</span>
+      sont aux correctes!
+    </p>
+    <p class="py-4">
+      👉  Si le probleme persiste, vous pouvez contacter le service client
+      <%= link_to 'Cliquez ici',"wa.me/0584258085", clas:"font-semibold text-blue-600 hover:undeline px-2" %>
+      <div class="modal-action">
+        <label for="sign_up_modal" class=" rounded-lg px-2 bg-blue-600 text-white ">OK j'ai compris!</label>
+      </div>
+    </p>
+  </div>
 </div>
+
