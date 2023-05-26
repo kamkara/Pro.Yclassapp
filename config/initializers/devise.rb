@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '883c64eb6262eb94c12a914eb1b521f9e89f5582aa09162be47711a3a978dcb118cbe7fb884f04f56de9412c17e6aee9858d96c9f67e2a1dfe4b8b4bf6247e28'
+  config.secret_key = '883c64eb6262eb94c12a914eb1b521f9e89f5582aa09162be47711a3a978dcb118cbe7fb884f04f56de9412c17e6aee9858d96c9f67e2a1dfe4b8b4bf6247e28'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -263,10 +263,10 @@ Devise.setup do |config|
   # should add them to the navigational formats lists.
   #
   # The "*/*" below is required to match Internet Explorer requests.
-  # config.navigational_formats = ['*/*', :html, :turbo_stream]
+  config.navigational_formats = ['*/*', :html, :turbo_stream]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
-  config.sign_out_via = :delete
+  config.sign_out_via = [:delete, :get]
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
