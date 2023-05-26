@@ -85,11 +85,11 @@
                 <% end %>
             <% end %>
 
-            <% elsif current_user_status == "ambassador" || current_user_status == "teacher"  %>
+        <% elsif current_user_status == "ambassador"   %>
             <%= link_to  "Espace Partenaire", ambassadors_path, class:"block px-4 py-2 mt-2 text-sm font-semibold bg-white rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" %>
-            <% elsif  current_user_status == "teacher"  %>
+        <% elsif  current_user_status == "teacher"  %>
             <%= link_to  "Espace Enseignant", enseignants_path, class:"block px-4 py-2 mt-2 text-sm font-semibold bg-white rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" %>
-            <% elsif current_user_status == "team"  %>
+        <% else  %>
             <%= link_to  "Espace Admin", dashboard_path, class:"block px-4 py-2 mt-2 text-sm font-semibold bg-white rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" %>
         <% end %>
     </div>

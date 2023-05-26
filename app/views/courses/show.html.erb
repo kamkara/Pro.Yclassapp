@@ -1,17 +1,17 @@
 <div id="<%= dom_id @course %>" class="mx-auto w-full flex">
     <%= turbo_frame_tag dom_id(@course.content) do %>
         <!-- Course content-->
-        <% if current_user_status == "student" && current_user.abonnement == "plan gratuit" %>
+        <%# if current_user_status == "student" && current_user.abonnement == "plan gratuit" %>
             <div class="">
-                <%= truncate(strip_tags(@course.content.to_s.html_safe), length: 800)%>
+                <%#= truncate(strip_tags(@course.content.to_s.html_safe), length: 800)%>
 
                 <div class="card glass mt-8">
-                    <%= render "homepage/abonnement/message" %>
+                    <%#= render "homepage/abonnement/message" %>
                 </div>
             </div>
-        <% else %>
+        <%# else %>
             <%= @course.content %>
-        <% end %>
+        <%# end %>
     <% end %>
 
 </div>
