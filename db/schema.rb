@@ -130,14 +130,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_17_165348) do
     t.string "last_name", null: false
     t.string "city_name", null: false
     t.string "school_name"
-    t.string "level_name", null: false
+    t.string "level_name"
     t.string "class_name"
     t.string "contact", limit: 10, null: false
-    t.string "matricule", limit: 9, null: false
-    t.boolean "doublant_statut", default: true, null: false
-    t.boolean "candidat_statut", default: true, null: false
+    t.string "matricule", limit: 10, null: false
     t.string "gender", default: "Femme", null: false
     t.string "user_role", default: "Student", null: false
+    t.string "slug", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

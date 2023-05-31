@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'membership/teamUp'
+  get 'membership/teamIn'
+  get 'membership/teacherUp'
+  get 'membership/teacherIn'
+  get 'membership/ambassadorUp'
+  get 'membership/ambassadorIn'
   
   ################## LEARN POD  ##########################
   get "new-article", to:"articles#new"
@@ -30,12 +36,19 @@ Rails.application.routes.draw do
   get "enseignants", to:"dashboard#teacher"
   get "ambassadors", to:"dashboard#ambassador"
   get "dashboard", to:'dashboard#index'
-  get "setting", to:'dashboard#home'
+  get "params", to:'dashboard#home'
   
   ################## DASHBOARD  && EsPORT ##########################
   get "export_student", to:"dashboard#export"
   get "course_export", to:"dashboard#course"
   
+  ##################### START Membership #####################
+  get "teacher-sign-up" , to:'membership#teacherUp'
+  get "teacher-sign-in" , to:'membership#teacherIn'
+  get "ambassadeur-sign-up" , to:'membership#ambassadorUp'
+  get "ambassadeur-sign-in" , to:'membership#ambassadorIn'
+  get "team-sign-up" , to:'membership#teamUp'
+  get "team-sign-in" , to:'membership#teamIn'
   
   
   ################## USERS  ##########################
